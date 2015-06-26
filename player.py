@@ -1,14 +1,43 @@
 def choose_character():
 	"""Choose your character"""
-	pass
+	name = input("Name your character : ")
+
+	while True:
+		print("What building do you want to choose?")
+		print("""
+		1-Gyriffindor
+		2-Slytherin
+		3-Ravenclaw
+		4-Hufflepuff
+		""")
+		building = input()
+		if building == "1":
+			building = "Gyriffindor"
+			break
+		elif building == "2":
+			building = "Slytherin"
+			break
+		elif building == "3":
+			building = "Ravenclaw"
+			break
+		elif building == "4":
+			building = "Hufflepuff"
+			break
+		else:
+			print("Choose wisely!")
+		
+	return (name,building)
 
 class Player():
 
-	def __init__(self,id=1,name="Player's Name",building="Player's Building",items=[]):
-		self.id = id
+	def __init__(self,name="Player's Name",building="Player's Building"):
+
 		self.name = name
 		self.building = building
-		self.items = items
+	
+"""
+# will add item system in the future
+# player actions
 
 	def take_item(self,item):
 		if item not in self.items:
@@ -27,4 +56,4 @@ class Player():
 		else:
 			print("You don't have that item")
 			return None
-
+"""

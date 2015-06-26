@@ -1,5 +1,5 @@
 from room import Room
-from player import Player
+from player import Player, choose_character
 import cmd
 
 class Game(cmd.Cmd):
@@ -7,13 +7,18 @@ class Game(cmd.Cmd):
 	def __init__(self):
 		cmd.Cmd.__init__(self)
 		self.location = Room()
-		self.player = Player()
+		name,building = choose_character()
+		self.player = Player(name,building)
 		self.my_character()
 		self.look()
 
+	def do_quit(self):
+		"""Quits the game"""
+		return True
+
 	def my_character(self):
-		print("Welcome ",self.player.name)
-		print("Your building is ",self.player.building)
+		print("Welcome",self.player.name)
+		print("Your building is",self.player.building)
 
 	def look(self):
 		print(self.location.description)
@@ -27,6 +32,7 @@ class Game(cmd.Cmd):
 			self.look()
 
 	def do_neighbors(self):
+		""" Shows all the neighbors with respect to your current position"""
 		pass
 
 	def do_n(self):
@@ -52,15 +58,13 @@ class Game(cmd.Cmd):
 	def do_down(self):
 		"""Go Down"""
 		pass
-
-	def do_take(self):
-		"""Takes an object"""
+"""
+	def do_take(self,item):
 		pass
 
-	def do_drop(self):
-		"""Drops an object"""
+	def do_drop(self,item):
 		pass
-
+"""
 
 if __name__ == "__main__":
 	game = Game()
