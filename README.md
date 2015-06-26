@@ -1,2 +1,2 @@
 # hogwarts
-a text adventure game. walk through the castle.
+a command line - text adventure game. walk through the castle.
