@@ -1,16 +1,18 @@
 def choose_character():
 	"""Choose your character"""
-	name = input("Name your character : ")
-
+	name = input("What is your name student ?: ")
+	print("")
+	print("It is our choices {0}, that show us who we truly are,\nfar more than our abilities -- Albus Dumbledore".format(name))
+	print("")
 	while True:
-		print("What building do you want to choose?")
+		print("Which Hogwarts House do you want to choose?")
 		print("""
 		1-Gyriffindor
 		2-Slytherin
 		3-Ravenclaw
 		4-Hufflepuff
 		""")
-		building = input()
+		building = input("Choose : ")
 		if building == "1":
 			building = "Gyriffindor"
 			break
@@ -27,6 +29,11 @@ def choose_character():
 			print("Choose wisely!")
 		
 	return (name,building)
+
+house_mottos = {"Gyriffindor":"Their daring, nerve and chivalry set Gryffindors apart",
+				"Slytherin":"Slytherin will help you on your way to greatness",
+				"Hufflepuff":"Those patient Hufflepuffs are true and unafraid of toil",
+				"Ravenclaw":"Wit beyond measure is man's greatest treasure"}
 
 class Player():
 

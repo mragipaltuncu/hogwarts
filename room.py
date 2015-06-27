@@ -1,9 +1,19 @@
-def get_room():
-	pass
+import json
+
+def get_room(id):
+	ret = None
+
+	with open(str(id)+".json","r") as f:
+		jsontext = f.read()
+		d = json.loads(jsontext, strict = False)
+		d['id'] = id
+		ret = Room(**d)
+
+	return ret
 
 class Room():
 
-	def __init__(self, id=1, name="Unnamed Room", description="Undefined description", neighbors = {}):
+	def __init__(self, id=0, name="Unnamed Room", description="Undefined description", neighbors = {}):
 		self.id = id
 		self.name = name
 		self.description = description
