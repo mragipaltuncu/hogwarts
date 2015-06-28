@@ -1,10 +1,14 @@
 import json
+import sqlite3
+
 
 def get_room(id):
 	ret = None
 
-	with open(str(id)+".json","r") as f:
-		jsontext = f.read()
+	con = sqlite3.connect("game.db")
+	for row in con.execute("select json from rooms where id=?",(id,)):
+
+		jsontext = row[0]
 		d = json.loads(jsontext, strict = False)
 		d['id'] = id
 		ret = Room(**d)
