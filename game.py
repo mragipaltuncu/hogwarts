@@ -13,7 +13,7 @@ class Game(cmd.Cmd):
 		self.my_character()
 		self.look()
 
-	def do_quit(self):
+	def do_quit(self, args):
 		"""Quits the game"""
 		return True
 
@@ -35,33 +35,33 @@ class Game(cmd.Cmd):
 			self.location = get_room(newroom) #buraya get_room fonksiyonu eklenecek
 			self.look()
 
-	def do_neighbors(self):
+	def do_neighbors(self,args):
 		""" Shows all the neighbors with respect to your current position"""
-		pass
+		print(self.location.neighbors)
 
-	def do_n(self):
+	def do_n(self,args):
 		"""Go North"""
-		pass
+		self.move('n')
 
-	def do_s(self):
+	def do_s(self,args):
 		"""Go South"""
-		pass
+		self.move('s')
 
-	def do_w(self):
+	def do_w(self,args):
 		"""Go West"""
-		pass
+		self.move('w')
 
-	def do_e(self):
+	def do_e(self,args):
 		"""Go East"""
-		pass
+		self.move('e')
 
-	def do_up(self):
+	def do_up(self,args):
 		"""Go Up"""
-		pass
+		self.move('u')
 
-	def do_down(self):
+	def do_down(self,args):
 		"""Go Down"""
-		pass
+		self.move('d')
 """
 	def do_take(self,item):
 		pass
