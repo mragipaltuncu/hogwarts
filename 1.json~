@@ -1,4 +1,0 @@
-{"name":"Great Hall",
-"description": "The Great Hall is a large hall with four long tables where students of each House sit at during mealtimes, as well as the staff table at the front, where the entire Hogwarts staff sits. There is a throne-like chair in the centre of the table where the current Headmaster or Headmistress sits. The ceiling of the Great Hall is covered with candles and  it is enchanted to look like the sky above.",
-"neighbors": {"w":2,"e":3,"n":4,"s":5}
-}
